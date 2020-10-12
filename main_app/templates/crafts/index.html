@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Crafts</h1>
+
+{% for craft in crafts %}
+  <div class="card">
+    <div class="card-content">
+      <span class='card-title'>{{ craft.name }}</span>
+      <p>Type: {{ craft.type }}</p>
+      <p>Time to make: {{ craft.hours }} hour(s)</p>
+      <p>Description: {{ craft.description }}</p>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
