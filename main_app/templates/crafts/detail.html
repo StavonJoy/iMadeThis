@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>{{ craft.name }}</h2>
+<h2 class="center-align">{{ craft.name }}</h2>
 <div class="card">
   <div class="card-content">
     <p>Type: {{ craft.type }}</p>
@@ -13,6 +13,8 @@
     {% endif %}    
     <br>
     <p>Description: {{ craft.description }}</p>
+    <br>
+    <p>Made by {{ craft.user }}</p>
   </div>
   {% for photo in craft.photo_set.all %}
     <img class="responsive-img card-panel" src="{{photo.url}}">

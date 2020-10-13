@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>Crafts</h2>
+<h2 class="center-align">Crafts</h2>
 
 {% for craft in crafts %}
   <div class="card">
@@ -15,6 +15,7 @@
           <p>Time to make: {{ craft.hours }} hours</p>
         {% endif %}
         <p>Description: {{ craft.description }}</p>
+        <p class="right-align">Made by {{ craft.user }}</p>
       </div>
     </a>
   </div>

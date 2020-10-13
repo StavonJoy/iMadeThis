@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h3>Delete Craft</h3>
+  <h3 class="center-align">Delete Craft</h3>
   <h4>Are you sure you want to delete <span class="teal-text">{{ object.name }}</span>?</h4>
   <form action="" method="POST">
     {% csrf_token %}
