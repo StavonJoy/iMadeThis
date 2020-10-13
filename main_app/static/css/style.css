@@ -17,3 +17,12 @@ footer.page-footer {
   text-align: right;
   background-color: #8B8BAE;
 }
+
+.img {
+  height: 150px;
+  width: 150px;
+}
+
+.title {
+  color: black;
+}

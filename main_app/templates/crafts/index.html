@@ -4,21 +4,34 @@
 <h2 class="center-align">Crafts</h2>
 
 {% for craft in crafts %}
-  <div class="card">
-    <a href="{% url 'detail' craft.id %}">
-      <div class="card-content">
-        <span class='card-title'>{{ craft.name }}</span>
-        <p>Type: {{ craft.type }}</p>
-        {% if craft.hours <= 1 %}
-          <p>Time to make: {{ craft.hours }} hour</p>
-        {% else %}
-          <p>Time to make: {{ craft.hours }} hours</p>
-        {% endif %}
-        <p>Description: {{ craft.description }}</p>
-        <p class="center-align">Made by: {{ craft.user }}</p>
-      </div>
-    </a>
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <a href="{% url 'detail' craft.id %}">
+          {% for photo in craft.photo_set.all %}
+            <div class="center-align">
+              <img src="{{ photo.url }}" class="img">
+            </div>
+          {% empty %}
+            <div class="center-align">
+              <img src="https://i.pinimg.com/originals/49/95/cc/4995cc6d4d68b7dad73d80d40249fdab.png" class="img">
+            </div>
+          {% endfor %}
+          <h4 class='card-title center-align'>{{ craft.name }}</h4>
+          <div class="card-content">
+            <p>Type: {{ craft.type }}</p>
+            {% if craft.hours <= 1 %}
+              <p>Time to make: {{ craft.hours }} hour</p>
+            {% else %}
+              <p>Time to make: {{ craft.hours }} hours</p>
+            {% endif %}
+            <p>Description: {{ craft.description }}</p>
+            <p>Made by: {{ craft.user }}</p>
+          </div>
+        </div>
+      </a>
   </div>
+</div>
 {% endfor %}
 
 {% endblock %}
