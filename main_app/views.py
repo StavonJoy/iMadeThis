@@ -24,8 +24,12 @@ def crafts_detail(request, craft_id):
 
 class CraftCreate(CreateView):
   model = Craft
-  fields = '__all__'
+  fields = ['name', 'type', 'hours', 'description']
   success_url= '/crafts/'
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class CraftUpdate(UpdateView):
   model = Craft

@@ -131,3 +131,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/crafts/'
+
+LOGOUT_REDIRECT_URL = '/'

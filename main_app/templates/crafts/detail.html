@@ -14,7 +14,7 @@
     <br>
     <p>Description: {{ craft.description }}</p>
     <br>
-    <p>Made by {{ craft.user }}</p>
+    <p class="center-align">Made by: {{ craft.user }}</p>
   </div>
   {% for photo in craft.photo_set.all %}
     <img class="responsive-img card-panel" src="{{photo.url}}">
