@@ -4,6 +4,8 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import uuid
 import boto3
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'imadethiss'
@@ -52,3 +54,17 @@ def add_photo(request, craft_id):
         except:
             print('An error occurred uploading file to S3')
     return redirect('detail', craft_id=craft_id)
+
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('index')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'registration/signup.html', context)
