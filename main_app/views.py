@@ -11,3 +11,7 @@ def about(request):
 def crafts_index(request):
   crafts = Craft.objects.all()
   return render(request, 'crafts/index.html', { 'crafts': crafts })
+
+def crafts_detail(request, craft_id):
+  craft = Craft.objects.get(id=craft_id)
+  return render(request, 'crafts/detail.html', { 'craft': craft })
