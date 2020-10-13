@@ -18,8 +18,9 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;iMadeThis</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/crafts">View All Crafts</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'crafts_create' %}">Create a Craft</a></li>
+          <li><a href="{% url 'index' %}">View All Crafts</a></li>
         </ul>
       </div>
     </nav>

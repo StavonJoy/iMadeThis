@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Craft
+from django.views.generic import ListView
+from django.views.generic.edit import CreateView
 
 def home(request):
   return render(request, 'home.html')
@@ -15,3 +16,7 @@ def crafts_index(request):
 def crafts_detail(request, craft_id):
   craft = Craft.objects.get(id=craft_id)
   return render(request, 'crafts/detail.html', { 'craft': craft })
+
+class CraftCreate(CreateView):
+  model = Craft
+  fields = '__all__'
