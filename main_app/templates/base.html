@@ -9,18 +9,20 @@
   <title>iMadeThis</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <header class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
         <ul>
+          <li><img src="https://i.pinimg.com/originals/49/95/cc/4995cc6d4d68b7dad73d80d40249fdab.png" class="logo"></li>
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;iMadeThis</a></li>
         </ul>
-        <ul class="right">
+        <ul class="right flow-text">
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
-            <li><a href="{% url 'crafts_create' %}">Create a Craft</a></li>
+            <li><a href="{% url 'crafts_create' %}">Add a Craft</a></li>
             <li><a href="{% url 'index' %}">View All Crafts</a></li>
             <li><a href="{% url 'logout' %}">Log out</a></li>
           {% else %}

@@ -1,13 +1,22 @@
 nav {
-  background-color: #8B8BAE;
+  background-color: #8F4584;
+  color: black;
 }
 
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #B48EAE;
 }
 
+.card {
+  background-color: #633E5E;
+  color: white;
+}
+a {
+  color: black;
+}
 main {
   flex: 1 0 auto;
 }
@@ -15,14 +24,24 @@ main {
 footer.page-footer {
   padding-top: 0;
   text-align: right;
-  background-color: #8B8BAE;
+  background-color: #8F4584;
 }
 
 .img {
-  height: 150px;
-  width: 150px;
+  margin-top: 10px;
+  height: 80%;
+  width: 80%;
 }
 
 .title {
   color: black;
 }
+
+.logo {
+  height: 4em;
+  width: 4em;
+}
+
+/* .card-content {
+  background-color: #768778;
+} */
