@@ -71,3 +71,7 @@ def signup(request):
 
 class MaterialList(ListView):
   model = Material
+
+def assoc_material(request, craft_id, material_id):
+  Craft.objects.get(id=craft_id).materials.add(material_id)
+  return redirect('detail', craft_id=craft_id)
