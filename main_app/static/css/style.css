@@ -7,11 +7,11 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: #B48EAE;
+  background-color: #695466;
 }
 
 .card {
-  background-color: #633E5E;
+  background-color: #B48EAE;
   color: white;
 }
 a {
@@ -28,9 +28,8 @@ footer.page-footer {
 }
 
 .img {
-  margin-top: 10px;
-  height: 80%;
-  width: 80%;
+  height: auto;
+  width: auto;
 }
 
 .title {

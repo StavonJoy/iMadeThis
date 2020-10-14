@@ -10,11 +10,11 @@
         <a href="{% url 'detail' craft.id %}">
           {% for photo in craft.photo_set.all %}
             <div class="card-image center-align">
-              <img src="{{ photo.url }}" class="img">
+              <img class="responsive-img" src="{{ photo.url }}">
             </div>
           {% empty %}
             <div class="card-image center-align">
-              <img src="https://i.pinimg.com/originals/49/95/cc/4995cc6d4d68b7dad73d80d40249fdab.png" class="img">
+              <img class="responsive-img" src="https://i.imgur.com/FHcVKLK.png">
             </div>
           {% endfor %}
           <div class="card-content white-text">

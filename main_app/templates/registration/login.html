@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h3 class="center-align">Log In</h3>
-<form method="post" action="{% url 'login' %}">
+<h3 class="center-align white-text">Log In</h3>
+<form class="white-text" method="post" action="{% url 'login' %}">
   {% csrf_token %}
   {{ form.as_p }}
   <input type="submit" class="btn" value="login">

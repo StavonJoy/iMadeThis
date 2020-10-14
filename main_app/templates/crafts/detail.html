@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2 class="center-align">{{ craft.name }}</h2>
+<h2 class="center-align white-text">{{ craft.name }}</h2>
 <div class="card">
   <div class="card-content flow-text">
     <p>Type: {{ craft.type }}</p>
@@ -29,8 +29,8 @@
   </form>
   {% if user.id == craft.user.id %}
   <div class="card-action">
-    <a href="{% url 'crafts_update' craft.id %}">Edit</a>
-    <a href="{% url 'crafts_delete' craft.id %}">Delete</a>
+    <a href="{% url 'crafts_update' craft.id %}"><i class="small material-icons">edit</i>Edit</a>
+    <a href="{% url 'crafts_delete' craft.id %}"><i class="small material-icons">delete</i>Delete</a>
   </div>
   {% endif %}
 </div>
