@@ -37,42 +37,39 @@
       </form>
       <h4>Materials Used</h4>
       {% if craft.materials.count %}
-      {% for material in craft.materials.all %}
-      <div class="card s5 ">
-        <div class="card-content">
+        {% for material in craft.materials.all %}
+          <div class="card s5 ">
+          <div class="card-content">
           <span class="card-title">{{ material.name }}</span>
-        </div>
-      </div>
-      {% endfor %}
+          </div>
+          </div>
+        {% endfor %}
       {% else %}
-      <h5>No materials listed</h5>
+        <h5>No materials listed</h5>
       {% endif %}
-    </a>
     {% if user.id == craft.user.id %}
     <div>
       <h5>Available Materials</h5>
       {% if materials.count %}
-      {% for material in materials.all %}
-      <div class="card">
-        <div class="card-content">
-          <span class="card-title">
-            <span class="card-title">{{ material.name }}</span>
-          </span>
-        </div>
-        <div class="card-action">
-          <form action="{% url 'assoc_material' craft.id material.id %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn">Add</button>
-          </form>
-        </div>
-      </div>
-      {% endfor %}
+        {% for material in materials.all %}
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">{{ material.name }}</span>
+            </div>
+            <div class="card-action">
+              <form action="{% url 'assoc_material' craft.id material.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">Add</button>
+              </form>
+            </div>
+          </div>
+        {% endfor %}
       {% else %}
-      <h5>All materials used</h5>
+        <h5>All materials used</h5>
       {% endif %}
     </div>
     {% endif %}
+    </div>
   </div>
-</div>
 </div>
   {% endblock %}
