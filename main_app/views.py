@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Craft, Photo
+from .models import Craft, Photo, Material
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import uuid
@@ -35,7 +35,7 @@ class CraftCreate(CreateView):
 
 class CraftUpdate(UpdateView):
   model = Craft
-  fields = '__all__'
+  fields = ['name', 'type', 'hours', 'description', 'material']
 
 class CraftDelete(DeleteView):
   model = Craft
@@ -68,3 +68,6 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+class MaterialList(ListView):
+  model = Material
