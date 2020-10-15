@@ -3,10 +3,10 @@
 <br>
 <br>
 
-<div class="row">
-  <h2 class="center-align white-text">Crafts</h2>
+<div class="column container">
+  <h2 class="center-align white-text">User Creations</h2>
   {% for craft in crafts %}
-    <div class="col s6 hoverable craft">
+    <div class="col s4 hoverable craft">
       <div class="card z-depth-3">
         <a href="{% url 'detail' craft.id %}">
           {% for photo in craft.photo_set.all %}

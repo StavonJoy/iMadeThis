@@ -29,6 +29,10 @@ iMadeThis is a Full-stack Django App deployed using Heroku. This app is a place 
 - CSS
 - Javascript
 - Materialize
+- Python
+- Django
+- AWS
+- PostgreSQL
 - [Images from Pexels](https://pexels.com)
 - [Fonts by Google](https://fonts.google.com/)
 - Icons made by [freepik](http://www.freepik.com/) from [flaticon](https://www.flaticon.com/).

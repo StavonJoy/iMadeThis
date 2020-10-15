@@ -8,12 +8,13 @@ body {
   min-height: 100vh;
   flex-direction: column;
   background-color: #695466;
-  background-image: url(https://images.pexels.com/photos/4614200/pexels-photo-4614200.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+  background-image: url('../images/thread.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   height: 100vh;
   font-family: 'Bitter', serif;
+  
 }
 
 .card {
@@ -25,7 +26,7 @@ a {
   color: black;
 }
 main {
-  background-color: #4180948c;
+  /* background-color: #4180948c; */
   flex: 1 0 auto;
 }
 
@@ -49,6 +50,9 @@ footer.page-footer {
   width: 4em;
 }
 
+.craft {
+  width: 40%;
+}
 /* .card-content {
   background-color: #768778;
 } */
