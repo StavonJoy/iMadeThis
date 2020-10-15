@@ -2,14 +2,19 @@
 {% block content %}
 
 <h3>Material List</h3>
-
+<div>
+  <a href="{% url 'materials_create' %}" class="btn">Add Material</a>
+</div>
 {% for material in material_list %}
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ material.name }}</span>
-        </div>
-    </div>
-  </a>
+  <div class="col s6">
+    <a href="{% url 'materials_detail' material.id %}">
+      <div class="card">
+          <div class="card-content">
+              <span class="card-title">{{ material.name }}</span>
+          </div>
+      </div>
+    </a>
+  </div>
 {% endfor %}
 
 {% endblock %}

@@ -51,19 +51,17 @@
     <div>
       <h5>Available Materials</h5>
       {% if materials.count %}
-        {% for material in materials.all %}
           <div class="card">
-            <div class="card-content">
-              <span class="card-title">{{ material.name }}</span>
-            </div>
-            <div class="card-action">
+        {% for material in materials.all %}
+            <ul>
+              <li><span class="card-title">{{ material.name }}</span></li>
+            </ul>
               <form action="{% url 'assoc_material' craft.id material.id %}" method="post">
               {% csrf_token %}
               <button type="submit" class="btn">Add</button>
               </form>
-            </div>
-          </div>
         {% endfor %}
+          </div>
       {% else %}
         <h5>All materials used</h5>
       {% endif %}

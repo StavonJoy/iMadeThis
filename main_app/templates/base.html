@@ -23,7 +23,7 @@
           {% if user.is_authenticated %}
             <li><a href="{% url 'crafts_create' %}">Add a Craft</a></li>
             <li><a href="{% url 'index' %}">View All Crafts</a></li>
-            <li><a href="{% url 'material_index' %}">Materials</a></li>
+            <li><a href="{% url 'materials_index' %}">Materials</a></li>
             <li><a href="{% url 'logout' %}">Log out</a></li>
           {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Craft, Photo, Material
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import uuid
 import boto3
@@ -22,7 +22,8 @@ def crafts_index(request):
 
 def crafts_detail(request, craft_id):
   craft = Craft.objects.get(id=craft_id)
-  return render(request, 'crafts/detail.html', { 'craft': craft })
+  materials_craft_doesnt_have = Material.objects.exclude(id__in = craft.materials.all().values_list('id'))
+  return render(request, 'crafts/detail.html', { 'craft': craft, 'materials': materials_craft_doesnt_have })
 
 class CraftCreate(CreateView):
   model = Craft
@@ -71,6 +72,21 @@ def signup(request):
 
 class MaterialList(ListView):
   model = Material
+
+class MaterialDetail(DetailView):
+  model = Material
+
+class MaterialCreate(CreateView):
+  model = Material
+  fields = '__all__'
+
+class MaterialUpdate(UpdateView):
+  model = Material
+  fields = '__all__'
+
+class MaterialDelete(DeleteView):
+  model = Material
+  success_url = '/materials/'
 
 def assoc_material(request, craft_id, material_id):
   Craft.objects.get(id=craft_id).materials.add(material_id)
