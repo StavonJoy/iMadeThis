@@ -6,6 +6,8 @@ import uuid
 import boto3
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'imadethiss'
@@ -16,16 +18,18 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def crafts_index(request):
   crafts = Craft.objects.all()
   return render(request, 'crafts/index.html', { 'crafts': crafts })
 
+@login_required
 def crafts_detail(request, craft_id):
   craft = Craft.objects.get(id=craft_id)
   materials_craft_doesnt_have = Material.objects.exclude(id__in = craft.materials.all().values_list('id'))
   return render(request, 'crafts/detail.html', { 'craft': craft, 'materials': materials_craft_doesnt_have })
 
-class CraftCreate(CreateView):
+class CraftCreate(LoginRequiredMixin, CreateView):
   model = Craft
   fields = ['name', 'type', 'hours', 'description']
   success_url= '/crafts/'
@@ -34,14 +38,15 @@ class CraftCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class CraftUpdate(UpdateView):
+class CraftUpdate(LoginRequiredMixin, UpdateView):
   model = Craft
   fields = ['name', 'type', 'hours', 'description', 'material']
 
-class CraftDelete(DeleteView):
+class CraftDelete(LoginRequiredMixin, DeleteView):
   model = Craft
   success_url = '/crafts/'
 
+@login_required
 def add_photo(request, craft_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
@@ -70,24 +75,25 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
-class MaterialList(ListView):
+class MaterialList(LoginRequiredMixin, ListView):
   model = Material
 
-class MaterialDetail(DetailView):
+class MaterialDetail(LoginRequiredMixin, DetailView):
   model = Material
 
-class MaterialCreate(CreateView):
-  model = Material
-  fields = '__all__'
-
-class MaterialUpdate(UpdateView):
+class MaterialCreate(LoginRequiredMixin, CreateView):
   model = Material
   fields = '__all__'
 
-class MaterialDelete(DeleteView):
+class MaterialUpdate(LoginRequiredMixin, UpdateView):
+  model = Material
+  fields = '__all__'
+
+class MaterialDelete(LoginRequiredMixin, DeleteView):
   model = Material
   success_url = '/materials/'
 
+@login_required
 def assoc_material(request, craft_id, material_id):
   Craft.objects.get(id=craft_id).materials.add(material_id)
   return redirect('detail', craft_id=craft_id)

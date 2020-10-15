@@ -9,11 +9,16 @@ body {
   flex-direction: column;
   background-color: #695466;
   background-image: url(https://images.pexels.com/photos/4614200/pexels-photo-4614200.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100vh;
 }
 
 .card {
   background-color: #305E6E;
   color: white;
+  height: 50%;
 }
 a {
   color: black;
