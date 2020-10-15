@@ -4,41 +4,29 @@ nav {
 }
 
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
   background-color: #695466;
   background-image: url('../images/thread.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  height: 100vh;
   font-family: 'Bitter', serif;
-  
 }
 
 .card {
   background-color: #305E6E;
   color: white;
-  height: 50%;
 }
 a {
   color: black;
 }
-main {
-  /* background-color: #4180948c; */
-  flex: 1 0 auto;
-}
 
 footer.page-footer {
-  padding-top: 0;
   text-align: right;
   background-color: #0286B3;
 }
 
 .img {
-  height: auto;
-  width: auto;
+  height: 50vh;
 }
 
 .title {
@@ -50,9 +38,24 @@ footer.page-footer {
   width: 4em;
 }
 
-.craft {
-  width: 40%;
+.card {
+  margin-top: 15px;
+  height: 70vh;
 }
-/* .card-content {
-  background-color: #768778;
-} */
+
+main {
+  min-height: calc(100vh - 97px);
+}
+#mat, #about {
+  height: auto;
+}
+
+@media screen and (max-width: 400px) {
+  #craft {
+    height: 50vh;
+  }
+  .img {
+    height: 80px;
+  }
+
+}
