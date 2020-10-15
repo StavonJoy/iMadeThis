@@ -40,12 +40,13 @@ footer.page-footer {
 
 .card {
   margin-top: 15px;
-  height: 70vh;
+  height: 60vh;
 }
 
 main {
   min-height: calc(100vh - 97px);
 }
+
 #mat, #about {
   height: auto;
 }
