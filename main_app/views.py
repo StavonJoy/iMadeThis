@@ -40,7 +40,7 @@ class CraftCreate(LoginRequiredMixin, CreateView):
 
 class CraftUpdate(LoginRequiredMixin, UpdateView):
   model = Craft
-  fields = ['name', 'type', 'hours', 'description', 'material']
+  fields = ['name', 'type', 'hours', 'description', 'materials']
 
 class CraftDelete(LoginRequiredMixin, DeleteView):
   model = Craft

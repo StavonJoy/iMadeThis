@@ -8,6 +8,7 @@ iMadeThis is a Full-stack Django App deployed using Heroku. This app is a place 
 ### Screenshots
 
 ![screenshot1](main_app/static/images/ss1.png)
+
 ![screenshot2](main_app/static/images/ss2.png)
 
 -----
