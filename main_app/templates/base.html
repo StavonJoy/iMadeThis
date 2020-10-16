@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body class="white-text">
   <header class="navbar-fixed">
     <nav>
@@ -22,13 +24,13 @@
         <ul id="nav" class="right">
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
-            <li><a href="{% url 'crafts_create' %}">Add a Craft</a></li>
-            <li><a href="{% url 'index' %}">View All Crafts</a></li>
-            <li><a href="{% url 'materials_index' %}">Materials</a></li>
-            <li><a href="{% url 'logout' %}">Log out</a></li>
+          <li><a href="{% url 'crafts_create' %}">Add a Craft</a></li>
+          <li><a href="{% url 'index' %}">View All Crafts</a></li>
+          <li><a href="{% url 'materials_index' %}">Materials</a></li>
+          <li><a href="{% url 'logout' %}">Log out</a></li>
           {% else %}
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'login' %}">Log In</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'login' %}">Log In</a></li>
           {% endif %}
         </ul>
       </div>
@@ -42,4 +44,5 @@
     All Rights Reserved, &copy; 2020 iMadeThis &nbsp;
   </footer>
 </body>
+
 </html>

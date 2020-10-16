@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 {% if object %}
-  <h3 class="center-align white-text">Edit <span class="teal-text">{{object.name}}</span></h3>
+<h3 class="center-align white-text">Edit <span class="teal-text">{{object.name}}</span></h3>
 {% else %}
-  <h3 class="center-align white-text">Add a craft!</h3>
+<h3 class="center-align white-text">Add a craft!</h3>
 {% endif %}
-  <div class="card">
+<div class="card">
   <div class="card-content">
     <form action="" method="post">
       {% csrf_token %}
@@ -13,8 +13,8 @@
         {{ form.as_table }}
       </table>
       <input type="submit" value="Submit" class="btn">
-      <a href="/"class="btn">Cancel</a>
+      <a href="/" class="btn">Cancel</a>
     </form>
   </div>
 </div>
-  {% endblock %}
+{% endblock %}
