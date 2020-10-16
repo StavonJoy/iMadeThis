@@ -43,8 +43,9 @@ iMadeThis is a Full-stack Django App deployed using Heroku. This app is a place 
 
 -----
 
-### Link
+### Links
 
+See the [Trello](https://trello.com/b/WBnZJ8Pz/imadethis) board.
 Check out [iMadeThis](https://imadethiss.herokuapp.com/)!
 
 -----
