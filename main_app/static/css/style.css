@@ -47,6 +47,10 @@ main {
   min-height: calc(100vh - 97px);
 }
 
+#info {
+  text-align: left;
+}
+
 #mat, #about {
   height: auto;
 }
