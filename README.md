@@ -7,6 +7,9 @@ iMadeThis is a Full-stack Django App deployed using Heroku. This app is a place 
 
 ### Screenshots
 
+![screenshot1](main_app/static/images/ss1.png)
+![screenshot2](main_app/static/images/ss2.png)
+
 -----
 
 ### User Stories
@@ -35,7 +38,7 @@ iMadeThis is a Full-stack Django App deployed using Heroku. This app is a place 
 - PostgreSQL
 - [Images from Pexels](https://pexels.com)
 - [Fonts by Google](https://fonts.google.com/)
-- Icons made by [freepik](http://www.freepik.com/) from [flaticon](https://www.flaticon.com/).
+- Icons made by [freepik](http://www.freepik.com/) from [flaticon](https://www.flaticon.com/)
 
 -----
 
